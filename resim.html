@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resim Galerisi</title>
+</head>
+<body>
+    <div id="image-gallery"></div>
+
+    <script >
+
+        // Resim dosyalarının adlarını bir diziye ekliyoruz
+const imageFiles = ["bir.jpeg", "iki.jpeg", "uc.jpeg"];
+// Resimlerin bulunduğu klasör adı
+const imageFolder = "resim/";
+
+// Resimleri yerleştirmek istediğimiz div elementi
+const galleryDiv = document.getElementById("image-gallery");
+
+// Her bir resim dosyasını img tagi olarak oluştur ve div'in içine ekle
+imageFiles.forEach(function(image) {
+    // Yeni bir img elementi oluştur
+    const imgElement = document.createElement("img");
+    // Kaynağı klasördeki resim dosyası olacak şekilde ayarla
+    imgElement.src = imageFolder + image;
+    // İsteğe bağlı: img boyutlarını ayarlayabilirsin
+    imgElement.style.width = "200px";
+    imgElement.title="deneme";
+    imgElement.style.margin = "10px";
+    
+    // img elementini div'in içine ekle
+    galleryDiv.appendChild(imgElement);
+});
+    </script>
+</body>
+</html>
